@@ -1,0 +1,49 @@
+{
+  "name": "commandsaver",
+  "displayName": "Command Saver",
+  "description": "An extension to save and view project run commands.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:runCommandSaver.saveCommand",
+    "onCommand:runCommandSaver.viewCommand"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "runCommandSaver.saveCommand",
+        "title": "Save Run Command"
+      },
+      {
+        "command": "runCommandSaver.viewCommand",
+        "title": "View Saved Run Commands"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  },
+  "keywords": ["commands", "run commands", "project automation", "VS Code"]
+}
